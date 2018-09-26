@@ -1,0 +1,27 @@
+function usernameChecker (username) {
+	let bool = true;
+	for (let i = 0; i < username.length; i++) {
+		if (!(username.charCodeAt(i) >= 97 && username.charCodeAt(i) <= 122)) 
+			bool = false;
+	}
+	return bool;
+}
+function emailChecker (email) {
+	let bool = true;
+	let at = false
+	for (let i = 0; i < email.length; i++) {
+		if (email.charAt(i) == "@")
+			at = true;
+		else if (!(email.charCodeAt(i) >= 97 && email.charCodeAt(i) <= 122)) 
+			bool = false;
+	}
+	return bool && at;
+}
+function phoneNumChecker (num) {
+	let bool = true;
+	for (var i = 0; i < num.length; i++) {
+		if(!(num.charCodeAt(i) >= 48 && num.charCodeAt(i) <= 57) && num.charCodeAt(i) != 32 && num.charAt(i) != "+") 
+			bool = false;
+	}
+	return bool;
+}
